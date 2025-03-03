@@ -1,51 +1,54 @@
-\PassOptionsToPackage{backend=biber,style=ieee}{biblatex} % Pass options before loading proposal.cls
-\documentclass{assets/proposal}
+\documentclass[conference]{IEEEtran} % IEEE Conference template
 
-\usepackage{url}
-\usepackage{multicol}
-
-% Add bibliography resource
-\addbibresource{references.bib} % Ensure this file exists in Overleaf
+\usepackage{graphicx} 
+\usepackage{amsmath}
+\usepackage{url} 
+\usepackage[backend=biber,style=ieee,sorting=none]{biblatex} % Ensure IEEE format with proper sorting
+\addbibresource{references.bib} % Load bibliography file
 
 \begin{document}
 
-% Custom Title Page
-\begin{titlepage}
-    \centering
-    \vspace*{3cm} % Adjust vertical space
-    {\Huge \textbf{Code at the Speed of AI}} \\[0.5cm]
-    {\Large Evaluating the Trade-offs Between Productivity and Security} \\[2cm]
-    {\Large \textbf{Muhammed Ali Elhasan, Yousef Abbas, Zakaria Aslan}} \\[0.3cm]
-    {\large Department of Computer Science} \\[0.3cm]
-    {\large \universityname} 
-    \vfill
-    {\large \today} % Add the date at the bottom (optional)
-\end{titlepage}
+% Title Page
+\title{Trade‐Offs Between Efficiency and Security in AI-Assisted Software Development}
 
-% Two-column layout for main content
-\begin{multicols}{2}
+\author{
+    \IEEEauthorblockN{Muhammed Ali Elhasan, Yousef Abbas, Zakaria Aslan} 
+    \IEEEauthorblockA{Department of Computer Science, University of Gothenburg}
+}
 
-% Abstract
-\begin{customabstract} Generative AI is rapidly transforming software development by enhancing productivity.
-AI-assisted tools accelerate coding, yet they introduce notable security challenges.
-This proposal examines the trade-offs between efficiency and potential vulnerabilities.
-A mixed-methods approach, including surveys and code analyses, will be used to explore these issues.
-The goal is to offer insights that balance development speed with secure coding practices. \end{customabstract}
+\maketitle
 
-\input{sections/intro}
+% Abstract (one-column format as required by IEEE)
+\begin{abstract}
+Generative AI is transforming software development by enhancing productivity through automated coding assistance. However, while AI-assisted tools such as GitHub Copilot accelerate development, they introduce security vulnerabilities that may compromise software integrity. This study employs a mixed-methods approach, combining surveys of developers and code analysis, to investigate the trade-offs between efficiency and security risks. The findings aim to provide actionable insights for balancing rapid development with secure coding practices, benefiting both industry practitioners and researchers.
+\end{abstract}
+
+% Keywords Section
+\begin{IEEEkeywords}
+Generative AI, Software Security, Productivity, AI-Assisted Development.
+\end{IEEEkeywords}
+
+% Start Standard Two-Column Format
+\input{sections/intro} 
+
+\input{sections/RQ}
 
 \input{sections/RW}
 
 \input{sections/methodology}
 
-\input{sections/RQ}
+\input{sections/acknowledgements}
 
+\input{sections/changeLog}
 
-\end{multicols}
+% Ensure IEEE-compliant two-column bibliography
+\IEEEtriggeratref{1} % Ensures equal column balancing
+\begin{IEEEbiography}{}
+% If you have author biographies, add them here
+\end{IEEEbiography}
 
-% Ensure single-column layout for references
-\onecolumn
+% Restore two-column layout before bibliography
+\twocolumn
 \printbibliography
 
 \end{document}
-
