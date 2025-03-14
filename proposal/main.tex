@@ -2,7 +2,9 @@
 
 \usepackage{graphicx} 
 \usepackage{amsmath}
-\usepackage{url} 
+\usepackage{url}
+\usepackage{float}
+\usepackage{placeins}
 \usepackage[backend=biber,style=ieee,sorting=none]{biblatex} % Ensure IEEE format with proper sorting
 \addbibresource{references.bib} % Load bibliography file
 
@@ -20,7 +22,7 @@
 
 % Abstract (one-column format as required by IEEE)
 \begin{abstract}
-Generative AI is transforming software development by enhancing productivity through automated coding assistance. However, while AI-assisted tools such as GitHub Copilot accelerate development, they introduce security vulnerabilities that may compromise software integrity. This study employs a mixed-methods approach, combining surveys of developers and code analysis, to investigate the trade-offs between efficiency and security risks. The findings aim to provide actionable insights for balancing rapid development with secure coding practices, benefiting both industry practitioners and researchers.
+Generative AI tools like GitHub Copilot enhance software development productivity but introduce significant security vulnerabilities. This study investigates developer perceptions of the trade-offs between coding efficiency and security risks, utilizing surveys and code security analysis. The outcomes will inform practical guidelines for balancing rapid AI-assisted development with robust security practices.
 \end{abstract}
 
 % Keywords Section
@@ -31,15 +33,12 @@ Generative AI, Software Security, Productivity, AI-Assisted Development.
 % Start Standard Two-Column Format
 \input{sections/intro} 
 
-\input{sections/RQ}
-
 \input{sections/RW}
 
 \input{sections/methodology}
 
 \input{sections/acknowledgements}
 
-\input{sections/changeLog}
 
 % Ensure IEEE-compliant two-column bibliography
 \IEEEtriggeratref{1} % Ensures equal column balancing
@@ -48,7 +47,7 @@ Generative AI, Software Security, Productivity, AI-Assisted Development.
 \end{IEEEbiography}
 
 % Restore two-column layout before bibliography
-\twocolumn
+
 \printbibliography
 
 \end{document}
