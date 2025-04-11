@@ -1,1 +1,9 @@
-.qodo
+# LaTeX build files
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.qodo
+build/
+.vscode/
