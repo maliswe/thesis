@@ -1,4 +1,3 @@
-# LaTeX build files
 *.aux
 *.log
 *.fls
@@ -7,3 +6,6 @@
 *.qodo
 build/
 .vscode/
+*.bbl
+*.blg
+
