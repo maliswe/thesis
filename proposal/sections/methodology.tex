@@ -1,5 +1,5 @@
 \section{Research Design and Methodology}
-This study employs a mixed-methods approach, integrating both quantitative and qualitative research techniques to investigate the trade-offs between productivity and security in AI-assisted software development. By combining developer surveys and code security analysis, the study aims to quantify and contextualize the security risks associated with AI-generated code while assessing their impact on development efficiency.
+This study employs a mixed-methods approach, integrating both quantitative and qualitative research techniques to investigate the trade-offs between productivity and security in AI-assisted software development. By combining developer surveys, literature review, and code security analysis, the study aims to quantify and contextualize the security risks associated with AI-generated code while assessing their impact on development efficiency.
 
 \subsection{Hypotheses}
 
@@ -12,17 +12,19 @@ To systematically investigate the research questions, the study formulates the f
     \item \textbf{H$_{1}$ (Alternative Hypothesis)}: Developers perceive a significant trade-off between speed and security when using AI-assisted coding tools.
 \end{itemize}
 
-The survey data, analyzed using descriptive statistics, correlation tests, and comparative analysis, will determine whether developers consistently report concerns about security risks in AI-assisted coding.
-
-\subsubsection{For RQ2 (Effectiveness of Security Verification)}
+\subsubsection{For RQ2 (What are the existing security verification practices)}
 
 \begin{itemize}
-    \item \textbf{H$_{0}$ (Null Hypothesis)}: Existing security verification methods are sufficient in detecting and mitigating security vulnerabilities in AI-generated code.
-    \item \textbf{H$_{1}$ (Alternative Hypothesis)}: Existing security verification methods are insufficient in detecting and mitigating security vulnerabilities in AI-generated code.
+    \item \textbf{H$_{0}$ (Null Hypothesis)}: There are no existing security verification methods designed to operate at a speed comparable to the rapid generation of AI-generated code.
+    \item \textbf{H$_{1}$ (Alternative Hypothesis)}: There are security verification methods specifically designed to verify AI-generated code at a pace that matches the rapid speed of its generation.
 \end{itemize}
 
-The security analysis will assess the frequency, severity, and type of vulnerabilities found in AI-generated code. Statistical evaluations, including frequency analysis and comparative benchmarking against industry security standards, will help test this hypothesis.
+\subsubsection{For RQ2.1 (How effective are the existing security verification practices)}
 
+\begin{itemize}
+    \item \textbf{H$_{0}$ (Null Hypothesis)}: Existing security verification practices are not effective in identifying vulnerabilities in AI-generated code.
+    \item \textbf{H$_{1}$ (Alternative Hypothesis)}: Existing security verification practices are effective in identifying vulnerabilities in AI-generated code.
+\end{itemize}
 
 \subsection{Research Method}
 
@@ -58,9 +60,13 @@ These responses will help quantify perceptions of security risks, assess common 
     \label{fig:workflow_diagram}
 \end{figure}
 
+
+\subsubsection{Security Verification}
+Landscape Review: To address the question of what security verification practices currently exist for AI-generated code, this section will review academic publications, industry reports, and documentation from security tools. The goal is to map out the landscape of available methods, examining their design, purpose, and level of automation. The review will pay particular attention to whether these methods were developed with AI-generated code in mind, and how they are integrated into modern development workflows. It will also highlight any gaps in existing practices such as overreliance on post-generation manual review that could hinder the secure adoption of AI coding tools. This investigation will provide the necessary context for evaluating the novelty and limitations of current security approaches in relation to the rapid pace of AI code generation.
+
 \subsubsection{Code Analysis}
 
-We will compile a dataset of 25-30 AI-generated code samples by utilizing various AI coding tools and sourcing existing publicly online available examples across multiple programming languages (e.g., Python, JavaScript, Java) and use cases (e.g., web development, API security, cryptographic functions). The selected samples will represent realistic coding scenarios to facilitate an in-depth security analysis.
+We will compile a dataset of 9-13 AI-generated code samples by utilizing various AI coding tools and sourcing existing publicly online available examples across multiple programming languages (e.g., Python, JavaScript, Java) and use cases (e.g., web development, API security, cryptographic functions). The selected samples will represent realistic coding scenarios to facilitate an in-depth security analysis.
 The methodology for security analysis includes:
 
 \begin{itemize}
@@ -79,6 +85,51 @@ By examining patterns in security flaws and comparing them with survey responses
     \label{fig:data_analysis_diagram}
 \end{figure}
 
+\subsubsection{Code Sample Selection}
+To ensure a balanced and representative dataset, code samples will be selected using a combination of randomized and purposeful sampling methods, adhering the following selection criteria:
+
+\begin{itemize}
+    \item \textbf{Programming Languages}: JavaScript, Java, c++, Python.
+    \item \textbf{Types of Applications}: Web apps, APIs, cryptographic functions, data processing, authentication systems.
+    \item \textbf{AI Tools Used}: GitHub Copilot, ChatGPT, AWS CodeWhisperer, Google Gemini.
+    \item \textbf{Complexity}: Moderate complexity, code snippet, standalone components.
+    \item \textbf{Randomized selection  (70\% of the samples, 5-7 samples)}: Randomly generated code snippets from common developer communities such as GitHub, Stack Overflow, AI code generation examples publicly shared by developers, and our own AI-generated examples using standard prompts, which if happened the prompts and conversation will be available to view.
+    \item \textbf{Purposeful selection (30\% of your samples, 4-6 samples)}: Intentionally selecting a few samples:
+    \begin{itemize}
+        \item Known faulty examples: AI-generated code publicly flagged for vulnerabilities or security issues.
+        \item Known clean examples: AI-generated code recognized or peer-reviewed as secure or adhering closely to security best practices.
+        \item Popular scenarios from well-documented sources to represent standard industry practices (e.g., OWASP-related implementations).
+    \end{itemize}
+\end{itemize}
+
+\begin{table}[h!]
+    \caption{Sample Selection Criteria}
+    \centering
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{{Criteria}} & \textbf{{Number of samples}} \\
+    \hline
+    Randomly selected & 5-7 \\
+    \hline
+    Intentionally faulty & 2-3 \\
+    \hline
+    Intentionally clean & 2-3 \\
+    \hline
+    Total samples & 9-13 \\
+    \hline
+    Programming Languages & At least 3 (Python, JS, Java) \\
+    \hline
+    AI Generation Tools & At least 2 (Copilot, ChatGPT) \\
+    \hline
+    \end{tabular}
+\end{table}
+\vspace{-0.8em} 
+\small\textit{A more detailed structure specifying the functionality, corresponding test cases, the version of the AI generation tool used, and the total number of samples for each programming language and AI tool will be provided at a later stage.}
+
+\textbf{Justification of sample selection}
+The dataset should represent realistic scenarios that reflect common developer practices and include but are not limited to languages commonly used, not just extremes of faulty or perfect code. Randomized Selection: Prevents bias, reflecting general AI usage realistically. Purposeful Selection: Captures extremes for detailed comparison and identifying recurring patterns or exceptions in vulnerabilities.
+
 \subsection{Data Analysis}
 
 \subsubsection{Survey Data}
@@ -96,10 +147,13 @@ Survey responses will be analyzed using statistical methods, including:
 
 \paragraph{Addresses RQ1:} The survey data will directly reflect how developers perceive the security-efficiency trade-off, revealing trends in how security concerns impact AI tool adoption and coding behavior.
 
+\subsubsection{Literature Review Findings}
+The literature review findings will be synthesized through qualitative analysis, focusing on identifying patterns, gaps, and emerging trends in security verification practices related to AI-generated code. Key themes such as automation, scalability, and tool adaptability will be extracted and categorized. The review will also compare the characteristics of modern verification methods with traditional approaches to determine whether current practices are evolving in response to the growing use of AI in software development.
+\paragraph{Motivation for Methods:} Thematic synthesis enables a structured evaluation of diverse sources, allowing for the identification of recurring concepts and underexplored areas. This approach supports an informed assessment of whether existing verification practices are adequate for the pace and nature of AI-generated code.
+\paragraph{Addresses RQ2:} The literature review findings will clarify what verification methods are currently in use, whether they are tailored to AI-generated code, and to what extent developers continue to depend on slower, manual security checks. This directly informs the investigation of existing practices in secure AI-assisted development.
+
 \subsubsection{Code Security Evaluation}
-
 The identified vulnerabilities will be categorized based on severity, type, and frequency to assess the effectiveness of current security verification methods. This analysis will provide insights into whether AI-generated code introduces systematic risks and how they align with developer concerns reported in the survey.
-
 The security analysis will include:
 
 \begin{itemize}
@@ -110,5 +164,5 @@ The security analysis will include:
 
 \paragraph{Motivation for Methods:} These techniques provide an empirical foundation for assessing AI-generated code security. Frequency analysis identifies recurring risks, severity classification contextualizes the impact of these vulnerabilities, and comparative evaluation allows benchmarking against existing security standards.
 
-\paragraph{Addresses RQ2:} The security evaluation will measure the effectiveness of existing security verification methods for AI-generated code, helping to assess whether these practices are sufficient for mitigating security risks in real-world applications.
+\paragraph{Addresses RQ2.1:} The security evaluation will measure the effectiveness of existing security verification methods for AI-generated code, helping to assess whether these practices are sufficient for mitigating security risks in real-world applications.
 
