@@ -27,11 +27,22 @@ RQ2 is exploratory in nature and aims to identify and categorize existing practi
 
 \subsubsection{Developer Survey}
 
-The survey will target 40-50 software developers, including 20 web developers, 5 test engineers, 5 DevOps engineers, and 10 backend developers, who actively use AI coding tools. It is designed to capture developers' perspectives on trade-offs between development speed and security risks, as well as their mitigation strategies.
+To explore RQ1 and support RQ2 and RQ2.1, we designed a structured survey targeting active software developers who use AI-powered coding assistants (e.g., GitHub Copilot, ChatGPT, AWS CodeWhisperer, Google Gemini). The goal is to understand how developers perceive the trade-off between development speed and code security, as well as their current verification habits and perceived effectiveness of those practices.
 
-Survey participants will be asked to indicate their level of agreement with various statements using a 5-point Likert scale, supplemented with open-ended questions for qualitative insights.
+The survey consists of both closed-ended and open-ended questions and is organized into five thematic sections:
+\begin{enumerate}
+    \item Consent and Introduction
+    \item Demographics and Experience
+    \item Perceptions of AI Tool Efficiency and Security
+    \item Security Verification Practices
+    \item Open-Ended Reflections
+\end{enumerate}
 
-\paragraph{Survey Statements:}
+A 5-point Likert scale is used for core perception statements, ranging from 1 (Strongly Disagree) to 5 (Strongly Agree). This allows for quantitative analysis of trends across different developer profiles. Follow-up multiple-choice and frequency-based questions capture behavioral patterns, while a final open-ended question allows participants to provide contextual insights and examples.
+
+The survey includes the following types of questions:
+
+\paragraph{Perception Statements (Likert Scale):}
 \begin{itemize}
     \item AI tools help me write code faster, but I worry they introduce security risks.
     \item The time saved by using AI tools outweighs the effort required to fix security issues in AI-generated code.
@@ -40,14 +51,65 @@ Survey participants will be asked to indicate their level of agreement with vari
     \item I feel pressured to deliver code quickly when using AI tools, even if it means compromising security.
 \end{itemize}
 
-\paragraph{Follow-Up Questions:}
+\paragraph{Behavioral Follow-Up Questions:}
 \begin{itemize}
-    \item What percentage of time saved by AI tools is spent fixing security issues?
-    \item When using AI tools, how often do you review generated code for security flaws?
-    \item Describe a situation where you had to choose between development speed and code security while using AI tools.
+    \item What percentage of the time saved by AI tools is spent fixing security issues?
+    \item When using AI tools, how often do you review the generated code for security flaws?
+    \item Do you use organization-mandated security checklists when reviewing AI-generated code?
 \end{itemize}
 
-These responses will help quantify perceptions of security risks, assess common mitigation practices, and evaluate whether AI-generated efficiency gains are offset by additional security verification work.
+\paragraph{Verification Practice Questions (Multiple Choice):}
+\begin{itemize}
+    \item Which of the following security verification practices do you use when working with AI-generated code? (e.g., static analysis, dependency scanning, peer review, threat modeling, etc.)
+    \item How frequently do you apply these practices?
+\end{itemize}
+
+\paragraph{Open-Ended Reflection:}
+\begin{itemize}
+    \item Describe a situation where you had to choose between development speed and code security while using AI tools. What did you prioritize, and why?
+\end{itemize}
+
+The survey is currently being conducted using Google Forms and has been distributed to developer communities through Discord groups, LinkedIn channels, and professional Slack workspaces. The target sample size is 40–50 participants, with roles including web developers, backend engineers, DevOps engineers, and QA professionals. At the time of writing, initial responses have been received, and preliminary observations suggest developers perceive a strong speed advantage in AI coding tools but remain cautious about security risks.
+
+A full statistical analysis will be performed once the survey reaches the desired response threshold, and responses will be triangulated with the code analysis and literature review findings to provide a comprehensive perspective.
+
+\paragraph{Perception Statements (Likert Scale):}
+Participants are asked to indicate their level of agreement with the following statements on a 5-point Likert scale (1 = Strongly Disagree, 5 = Strongly Agree):
+
+\begin{itemize}
+    \item AI tools help me write code faster, but I worry they introduce security risks.
+    \item The time saved by using AI tools outweighs the effort required to fix security issues in AI-generated code.
+    \item I prioritize code security over development speed when using AI tools.
+    \item AI tools make it harder to follow secure coding practices (e.g., input sanitization, secure authentication).
+    \item I feel pressured to deliver code quickly when using AI tools, even if it means compromising security.
+\end{itemize}
+
+These statements are designed to assess developer perceptions of the efficiency-security trade-off, directly supporting RQ1.
+
+\vspace{0.5em}
+\paragraph{Behavioral Follow-Up Questions:}
+To understand real-world coding behavior, the survey includes the following multiple-choice and frequency-based questions:
+
+\begin{itemize}
+    \item What percentage of time saved by AI tools is typically spent fixing security issues?
+    \item When using AI tools, how often do you review the generated code for security flaws?
+\end{itemize}
+
+These questions provide insight into mitigation habits and the practical impact of AI tools on code verification workflows.
+
+\vspace{0.5em}
+\paragraph{Open-Ended Reflection:}
+To capture rich, contextual experiences, participants are asked:
+
+\begin{itemize}
+    \item Describe a situation where you had to choose between development speed and code security while using AI tools. What did you prioritize, and why?
+\end{itemize}
+
+This qualitative data complements the quantitative responses, allowing for deeper thematic analysis. It supports both RQ1 and RQ2.1 by revealing how developers make trade-offs in real-world settings.
+
+\vspace{0.5em}
+\paragraph{Rationale:}
+These questions collectively help quantify developers' perceptions of security risks, reveal their mitigation behaviors, and evaluate whether perceived productivity gains are offset by the time and effort spent on verification. The combination of Likert-scale items, behavioral frequency questions, and open-ended responses ensures a balanced and multidimensional understanding of developer attitudes and practices.
 
 
 \begin{figure}[H]
