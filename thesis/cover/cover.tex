@@ -1,0 +1,95 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage[top=3cm, bottom=3cm,
+			inner=3cm, outer=3cm]{geometry}						
+\usepackage{graphicx}
+\usepackage{textcomp}							
+\usepackage{lmodern}							
+\usepackage{helvet}	
+\usepackage{eso-pic}
+\usepackage{float}
+\usepackage{parskip}
+\newcommand{\backgroundpic}[3]{
+	\put(#1,#2){
+	\parbox[b][\paperheight]{\paperwidth}{
+	\centering
+	\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#3}}}}
+
+\begin{document} 
+
+\begin{titlepage}
+\newgeometry{top=3cm, bottom=3cm,
+			left=2.25 cm, right=2.25cm}	
+			
+% Cover page background 
+\AddToShipoutPicture*{\backgroundpic{-4}{56.7}{frontpage_gu_eng_vec_m2.pdf}}
+\addtolength{\voffset}{2cm}
+
+% Cover picture (replace with your own or delete)		
+\begin{figure}[H]
+\centering
+\vspace{1cm}
+\includegraphics[width=0.6\linewidth, height=0.4\textheight]{greybox.png}
+\end{figure}
+
+% Cover text
+\mbox{}
+\vfill
+\renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
+
+\textbf{\Huge Trade‐Offs Between Efficiency and Security in AI-Assisted Software Development} 
+\\[0.5cm]
+
+{\Large A Mixed-Methods Study of Developer Perceptions and Code Vulnerability Analysis}\\[0.5cm]
+
+Bachelor of Science Thesis in Software Engineering and Management \setlength{\parskip}{1cm}
+
+
+Department of Computer Science and Engineering \\
+\textsc{University of Gothenburg} \\
+\textsc{Chalmers University of Technology} \\
+Gothenburg, Sweden \the\year
+
+\renewcommand{\familydefault}{\rmdefault} \normalfont % Reset standard font
+\end{titlepage}
+
+
+% IMPRINT PAGE (BACK OF TITLE PAGE)
+\newpage
+\AddToShipoutPicture*{\backgroundpic{-4}{56.7}{frontpage_gu_eng_vec_m2.pdf}}
+\addtolength{\voffset}{2cm}
+\thispagestyle{empty}
+The Author grants to University of Gothenburg and Chalmers University of Technology the non-exclusive right to publish the Work electronically and in a non-commercial purpose make it accessible on the Internet.\\
+The Author warrants that he/she is the author to the Work, and warrants that the Work does not contain text, pictures or other material that violates copyright law. \\
+
+The Author shall, when transferring the rights of the Work to a third party (for example a publisher or a company), acknowledge the third party about this agreement. If the Author has signed a copyright agreement with a third party regarding the Work, the Author warrants hereby that he/she has obtained any necessary permission from this third party to let University of Gothenburg and Chalmers University of Technology store the Work electronically and make it accessible on the Internet.\\ \\
+
+\textbf{Trade-Offs Between Efficiency and Security in AI-Assisted Software Development}\\
+Evaluating Developer Perceptions and Security Verification Methods in AI-Generated Code\
+
+\copyright ~ Muhammed Ali Elhasan, June, \the\year. \setlength{\parskip}{1cm} \\
+\copyright ~ Yousef Abbas, June, \the\year. \setlength{\parskip}{1cm} \\
+\copyright ~ Zakaria Aslan, June, \the\year. \setlength{\parskip}{1cm}
+
+Supervisor: NAME FAMILYNAME\\
+Examiner: NAME FAMILYNAME \setlength{\parskip}{1cm}
+
+
+University of Gothenburg\\
+Chalmers University of Technology\\
+Department of Computer Science and Engineering\\
+SE-412 96 G{\"o}teborg\\
+Sweden\\
+Telephone + 46 (0)31-772 1000 \setlength{\parskip}{0.5cm}
+
+% Caption for cover page figure if used, possibly with reference to further information in the report
+[Cover:
+an explanatory caption for the (possible) cover picture
+with page reference to detailed information in this essay.] \setlength{\parskip}{3cm}
+
+Department of Computer Science and Engineering \\
+\textsc{University of Gothenburg} \\
+\textsc{Chalmers University of Technology} \\
+Gothenburg, Sweden \the\year
+
+
+\end{document}

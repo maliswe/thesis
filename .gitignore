@@ -1,0 +1,11 @@
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.qodo
+build/
+.vscode/
+*.bbl
+*.blg
+

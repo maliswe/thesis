@@ -1,0 +1,23 @@
+\section{Related Work}
+
+\subsection{Impact of AI on Developer Code Writing Speed}
+AI-powered coding assistants have been widely adopted, with studies suggesting significant productivity benefits. Microsoft Research found that developers using GitHub Copilot completed tasks 55.8\% faster than those coding manually \cite{peng2023impact}. IBM’s study on AI pair programming in an enterprise setting observed perceived productivity gains but noted variability based on task complexity and developer experience \cite{weisz2025examining}.
+
+
+\subsection{Security Risks in AI-Generated Code}
+Security concerns in AI-generated code have been extensively documented. One of the first empirical evaluations of GitHub Copilot revealed that approximately 40\% of AI-generated code contained vulnerabilities, including SQL injection and buffer overflow issues \cite{fu2025security}. Perry et al. found that AI-assisted developers wrote significantly more insecure code than those without AI assistance, despite being more confident in their solutions \cite{perry2023}. Additionally, Asare et al. demonstrated that AI-generated code often replicated past vulnerabilities, repeating the same mistakes found in historical software security incidents \cite{asare2024}. 
+
+These findings suggest that while AI tools accelerate development, they also introduce new security risks that must be mitigated. After these studies were conducted, a study by Peslak and Kovalchick in 2024 analyzed data from the Stack Overflow Annual Developer Survey to assess the usage patterns of ChatGPT and GitHub Copilot among programmers. The findings revealed that 58.8\% of respondents regularly used ChatGPT, while 24.8\% utilized GitHub Copilot \cite{peslak2024ai}. This confirms that a significant number of developers use AI tools to generate code, even when evidence indicates that AI-generated code contains security vulnerabilities and risks.
+
+\subsection{Developer Adoption and Perceptions}
+Despite security risks, the adoption of AI coding assistants has grown rapidly. A 2023 survey by GitHub reported that over 70\% of developers believed Copilot helped them stay focused and avoid mental fatigue \cite{githubSurvey}. However, Snyk’s industry report found that while 75\% of developers believed AI-generated code was more secure than human-written code, 56\% of respondents admitted to encountering security issues in AI-generated suggestions \cite{snyk2023}.
+
+Additionally, empirical research further emphasizes this security concern. A study evaluating the security of GitHub Copilot’s code contributions found that approximately 40\% of generated code contained security vulnerabilities, including common weaknesses such as SQL injection and improper input validation. The likelihood of generating vulnerable code was influenced by the context and specificity of the prompts provided to the AI tool, as well as the type of programming language and the domain of the coding task \cite{pearce2021asleep}.
+
+These findings collectively indicate a potential overconfidence bias in AI-assisted development, where developers may unknowingly trust insecure AI-generated code, underlining the critical importance of careful review and validation practices.
+
+\subsection{Research Gaps}
+Despite existing research providing insights into productivity enhancements and security vulnerabilities associated with AI-assisted coding tools, several critical gaps remain.
+Firstly, current literature primarily addresses productivity improvements and security risks independently, with limited exploration into the inherent trade-offs developers face between coding speed and security when leveraging AI. There is insufficient research on developer perceptions and decision-making processes regarding these trade-offs, particularly how developers balance the immediate productivity benefits against the potential introduction of security vulnerabilities.
+Secondly, the effectiveness of existing security verification practices specifically tailored to AI-generated code has not been adequately investigated. While traditional verification methods are well-established for manually-written code, their effectiveness and adaptability for assessing AI-generated code remain unclear. Given the unique vulnerabilities introduced by AI coding assistants, research into specialized verification and validation methodologies is crucial.
+Addressing these gaps will enable the development of comprehensive guidelines and security frameworks, supporting developers in effectively utilizing AI tools without compromising application security.
